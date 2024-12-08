@@ -1,8 +1,8 @@
-#Sun Dec 08 07:53:14 ECT 2024
-base.0=C\:\\Users\\DET PC\\Desktop\\Moviles\\git\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\DET PC\\Desktop\\Moviles\\git\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\DET PC\\Desktop\\Moviles\\git\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.3=C\:\\Users\\DET PC\\Desktop\\Moviles\\git\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+#Sun Dec 08 08:52:09 ECT 2024
+base.0=C\:\\Users\\aange\\Documents\\GitHub\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\aange\\Documents\\GitHub\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\aange\\Documents\\GitHub\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.3=C\:\\Users\\aange\\Documents\\GitHub\\EjerciciosMoviles2\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=15/classes.dex

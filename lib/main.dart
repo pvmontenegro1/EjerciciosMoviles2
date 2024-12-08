@@ -10,6 +10,11 @@ import './pages/FactorizationPage.dart';
 import './pages/MCDPage.dart';
 import 'package:flutter/material.dart';
 
+import '../logic/FactorialPageLogic.dart';
+import '../pages/FactorialPage.dart';
+
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -19,20 +24,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FactorialController controlador = FactorialController();
+
     return MaterialApp(
-      title: 'Ejerccios',
+      title: 'Ejercicios',
       theme: ThemeData(
-       
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const HomePage(),
-       routes: {
-        '/ascii': (context) =>  AsciiPage(),
-        '/factorial': (context) => FactorialPage(),
-        '/mcm': (context) =>  MCDPage(),
+      routes: {
+        '/ascii': (context) => AsciiPage(),
+        '/factorial': (context) => FactorialView(
+          onCalcular: (numero) {
+            controlador.calcularFactorial(context, numero);
+          },
+        ),
+        '/mcm': (context) => MCDPage(),
         '/factorization': (context) => FactorizationPage(),
-        '/primos':(context) => NumerosPrimosPage() 
+        '/primos': (context) => NumerosPrimosPage(),
       },
     );
   }
