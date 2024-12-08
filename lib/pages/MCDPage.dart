@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '/logic/MCDPageLogic.dart'; // Importamos la lógica del controlador
 
-class HomePage extends StatefulWidget {
+class MCDPage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _MCDPageState createState() => _MCDPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _MCDPageState extends State<MCDPage> {
   // Controladores de texto para los TextFields
   final TextEditingController _num1Controller = TextEditingController();
   final TextEditingController _num2Controller = TextEditingController();

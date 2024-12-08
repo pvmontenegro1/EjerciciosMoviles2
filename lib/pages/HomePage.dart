@@ -33,6 +33,12 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/factorization'),
               child: const Text('Factorización'),
+
+            ), 
+            const Text(""),
+            ElevatedButton(
+              onPressed: () => Navigator.pushNamed(context, '/primos'),
+              child: const Text('Numeros Primos'),
             ),
           ],
         ),

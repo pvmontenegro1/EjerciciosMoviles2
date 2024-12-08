@@ -1,5 +1,10 @@
 //import 'package:appcompleto/pages/AsciiPage.dart';
 //import 'package:appcompleto/pages/FactorialPage.dart';
+import 'package:appcompleto/pages/AsciiPage.dart';
+import 'package:appcompleto/pages/FactorialPage.dart';
+import 'package:appcompleto/pages/HomePage.dart';
+import 'package:appcompleto/pages/NumerosPrimosPage.dart';
+
 import './pages/FactorizationPage.dart';
 //import 'package:appcompleto/pages/HomePage.dart';
 import './pages/MCDPage.dart';
@@ -23,10 +28,11 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomePage(),
        routes: {
-         //'/ascii': (context) => const AsciiPage(),
-         // '/factorial': (context) => const FactorialPage(),
-        '/mcm': (context) => const MCDPage,
+        '/ascii': (context) =>  AsciiPage(),
+        '/factorial': (context) => FactorialPage(),
+        '/mcm': (context) =>  MCDPage(),
         '/factorization': (context) => FactorizationPage(),
+        '/primos':(context) => NumerosPrimosPage() 
       },
     );
   }

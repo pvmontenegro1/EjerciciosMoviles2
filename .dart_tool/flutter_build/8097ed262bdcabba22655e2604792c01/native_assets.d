@@ -1,0 +1,1 @@
+ C:\\Users\\DET\ PC\\Desktop\\Moviles\\git\\EjerciciosMoviles2\\.dart_tool\\flutter_build\\8097ed262bdcabba22655e2604792c01\\native_assets.yaml: 
