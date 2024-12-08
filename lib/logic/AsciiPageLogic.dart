@@ -1,12 +1,13 @@
-class AsciiPageLogic {
-  // Método para generar la tabla de caracteres ASCII
-  String generarTablaAscii() {
-    StringBuffer asciiTable = StringBuffer();
-
-    for (int n = 0; n <= 255; n++) {
-      asciiTable.write('\n\t${n.toString().padLeft(3)} = \'${String.fromCharCode(n)}\'');
+List<Map<String, String>> generateFilteredAsciiTable() {
+  List<Map<String, String>> asciiTable = [];
+  int n = -1;
+  while (++n <= 255) {
+    if (n % 23 == 0 && n != 0) {
+      asciiTable.add({
+        'decimal': n.toString(),
+        'character': String.fromCharCode(n),
+      });
     }
-
-    return asciiTable.toString();
   }
+  return asciiTable;
 }
