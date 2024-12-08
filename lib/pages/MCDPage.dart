@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
-import '/logic/MCDPageLogic.dart'; 
+import '/logic/MCDPageLogic.dart'; // Importamos la lógica del controlador
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final TextEditingController _piController = TextEditingController();
-  final TextEditingController _eController = TextEditingController();
+  // Controladores de texto para los TextFields
+  final TextEditingController _num1Controller = TextEditingController();
+  final TextEditingController _num2Controller = TextEditingController();
+
   String _resultado = "";
-  String _resultado2 = "";
 
   // Instanciamos el controlador
-  final CalculatorController _calculatorController = CalculatorController();
+  final CalculoMCDControl _calculatorController = CalculoMCDControl();
 
-  // Función para calcular valores de pi y e
-  void _calcularValores() {
-    try {
-      double piInput = double.parse(_piController.text);  // Lee el input para pi
-      double eInput = double.parse(_eController.text);  // Lee el input para e
+  // Función para calcular el MCD
+  void _calculateMCD() {
+    setState(() {
+      try {
+        // Convertimos los valores ingresados a enteros
+        int num1 = int.parse(_num1Controller.text);
+        int num2 = int.parse(_num2Controller.text);
 
-      setState(() {
-        // Calculamos los valores usando el controller
-        _resultado = _calculatorController.calculatePi(piInput);
-        _resultado2 = _calculatorController.calculateE(eInput);
-      });
-    } catch (e) {
-      setState(() {
-        _resultado = 'Error en la entrada de pi. Asegúrate de ingresar un valor numérico.';
-        _resultado2 = 'Error en la entrada de e. Asegúrate de ingresar un valor numérico.';
-      });
-    }
+        // Calculamos el MCD usando el controlador
+        _resultado = _calculatorController.calculateMCD(num1, num2);
+      } catch (e) {
+        _resultado = "Por favor, ingresa números válidos.";
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ejercicio 4: Paso de Parámetros'),
+        title: Text('Ejercicio 3: MCD'),
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -53,38 +52,40 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // TextField para ingresar un valor para calcular pi
+                // TextField para ingresar el primer número
                 TextField(
-                  controller: _piController,
+                  controller: _num1Controller,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Ingresa un valor para calcular pi (por ejemplo, -1)',
+                    labelText: 'Ingresa el primer número',
                     border: OutlineInputBorder(),
                     fillColor: Colors.white,
+                    filled: true,
                   ),
                 ),
                 SizedBox(height: 20),
 
-                // TextField para ingresar un valor para calcular e
+                // TextField para ingresar el segundo número
                 TextField(
-                  controller: _eController,
+                  controller: _num2Controller,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    labelText: 'Ingresa un valor para calcular e (por ejemplo, 1)',
+                    labelText: 'Ingresa el segundo número',
                     border: OutlineInputBorder(),
                     fillColor: Colors.white,
+                    filled: true,
                   ),
                 ),
                 SizedBox(height: 20),
 
-                // Botón para ejecutar el cálculo
+                // Botón para calcular el MCD
                 ElevatedButton(
-                  onPressed: _calcularValores,
-                  child: Text('Calcular Pi y e'),
+                  onPressed: _calculateMCD,
+                  child: Text('Calcular MCD'),
                 ),
                 SizedBox(height: 20),
 
-                // Mostrar los resultados
+                // Mostrar el resultado
                 Text(
                   _resultado,
                   style: TextStyle(
@@ -92,15 +93,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  _resultado2,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
